@@ -1,4 +1,4 @@
-baseURL = "venqiu.github.io/repopres"
+baseURL = "https://venqiu.github.io/repopres/"
 languageCode = 'en-us'
 title = 'Netizen of Guide to Preserving Github Repositories'
 theme = "hugo-book"
