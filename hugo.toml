@@ -1,4 +1,4 @@
-baseURL = "hw4090-create.github.io/"
+baseURL = "venqiu.github.io/repopres"
 languageCode = 'en-us'
 title = 'Netizen of Guide to Preserving Github Repositories'
 theme = "hugo-book"
