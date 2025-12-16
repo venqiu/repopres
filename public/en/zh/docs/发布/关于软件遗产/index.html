@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/repopres/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=repopres/livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="关于软件遗产# Software Heritage 成立于 2016 年，由 Inria 发起，并与 UNESCO 合作。 它的使命是：“收集、保存，并让所有曾经写过的软件源代码可以被方便访问”。 他们主要从各种平台收集源代码，其中最重要的来源之一就是 GitHub。
+你可以先访问他们的在线档案： https://archive.softwareheritage.org/ 如果你的仓库还不在其中，可以通过保存请求页面发起 “origin save request”： https://archive.softwareheritage.org/save/
+Software Heritage 采集流程# 在 2021 年的研究论文中，Software Heritage 提出了 Software Heritage Acquisition Process（SWHAP） 的概念，用来描述他们如何系统性地收集和整理软件源代码。这套流程的目标是：
+覆盖尽可能多的软件托管平台； 保存完整的开发历史，而不仅仅是一份最新快照； 记录清楚来源、作者和后期整理者等“谱系信息”。 Phases（阶段）# （原文此处使用省略号，详细阶段可根据 SWHAP 论文补充）
+在具体的工作流程中，元数据表里通常会记录：
+director name（项目负责人） author name / email（作者姓名与邮箱） date original（最初发布日期） curator name / email（整理者姓名与邮箱） release tag（版本标签） commit message（整理团队写下的简短说明） 值得注意的是，现代版本控制系统（VCS）往往有两套不同的元数据：
+一套来自原始作者与开发团队（谁写了代码、何时提交）； 另一套来自后期的整理者或机构（谁抓取、谁审核、谁导入到档案系统）。 这种区分可以帮助研究者理解： 哪些信息来自原始开发活动，哪些则是归档过程本身留下的“第二层历史”。
+Explain Merkle Directed Acyclic Graph (DAG)（Merkle 有向无环图）# Software Heritage 的整个数据集合本质上是一个巨大的 Merkle DAG。 在这套结构中：
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/repopres/en/zh/docs/%E5%8F%91%E5%B8%83/%E5%85%B3%E4%BA%8E%E8%BD%AF%E4%BB%B6%E9%81%97%E4%BA%A7/">
+  <meta property="og:site_name" content="Netizen&#39;s Guide to Preserving Github Repositories">
+  <meta property="og:title" content="Software Heritage">
+  <meta property="og:description" content="关于软件遗产# Software Heritage 成立于 2016 年，由 Inria 发起，并与 UNESCO 合作。 它的使命是：“收集、保存，并让所有曾经写过的软件源代码可以被方便访问”。 他们主要从各种平台收集源代码，其中最重要的来源之一就是 GitHub。
+你可以先访问他们的在线档案： https://archive.softwareheritage.org/ 如果你的仓库还不在其中，可以通过保存请求页面发起 “origin save request”： https://archive.softwareheritage.org/save/
+Software Heritage 采集流程# 在 2021 年的研究论文中，Software Heritage 提出了 Software Heritage Acquisition Process（SWHAP） 的概念，用来描述他们如何系统性地收集和整理软件源代码。这套流程的目标是：
+覆盖尽可能多的软件托管平台； 保存完整的开发历史，而不仅仅是一份最新快照； 记录清楚来源、作者和后期整理者等“谱系信息”。 Phases（阶段）# （原文此处使用省略号，详细阶段可根据 SWHAP 论文补充）
+在具体的工作流程中，元数据表里通常会记录：
+director name（项目负责人） author name / email（作者姓名与邮箱） date original（最初发布日期） curator name / email（整理者姓名与邮箱） release tag（版本标签） commit message（整理团队写下的简短说明） 值得注意的是，现代版本控制系统（VCS）往往有两套不同的元数据：
+一套来自原始作者与开发团队（谁写了代码、何时提交）； 另一套来自后期的整理者或机构（谁抓取、谁审核、谁导入到档案系统）。 这种区分可以帮助研究者理解： 哪些信息来自原始开发活动，哪些则是归档过程本身留下的“第二层历史”。
+Explain Merkle Directed Acyclic Graph (DAG)（Merkle 有向无环图）# Software Heritage 的整个数据集合本质上是一个巨大的 Merkle DAG。 在这套结构中：">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="zh">
+
+
+  <meta itemprop="name" content="Software Heritage">
+  <meta itemprop="description" content="关于软件遗产# Software Heritage 成立于 2016 年，由 Inria 发起，并与 UNESCO 合作。 它的使命是：“收集、保存，并让所有曾经写过的软件源代码可以被方便访问”。 他们主要从各种平台收集源代码，其中最重要的来源之一就是 GitHub。
+你可以先访问他们的在线档案： https://archive.softwareheritage.org/ 如果你的仓库还不在其中，可以通过保存请求页面发起 “origin save request”： https://archive.softwareheritage.org/save/
+Software Heritage 采集流程# 在 2021 年的研究论文中，Software Heritage 提出了 Software Heritage Acquisition Process（SWHAP） 的概念，用来描述他们如何系统性地收集和整理软件源代码。这套流程的目标是：
+覆盖尽可能多的软件托管平台； 保存完整的开发历史，而不仅仅是一份最新快照； 记录清楚来源、作者和后期整理者等“谱系信息”。 Phases（阶段）# （原文此处使用省略号，详细阶段可根据 SWHAP 论文补充）
+在具体的工作流程中，元数据表里通常会记录：
+director name（项目负责人） author name / email（作者姓名与邮箱） date original（最初发布日期） curator name / email（整理者姓名与邮箱） release tag（版本标签） commit message（整理团队写下的简短说明） 值得注意的是，现代版本控制系统（VCS）往往有两套不同的元数据：
+一套来自原始作者与开发团队（谁写了代码、何时提交）； 另一套来自后期的整理者或机构（谁抓取、谁审核、谁导入到档案系统）。 这种区分可以帮助研究者理解： 哪些信息来自原始开发活动，哪些则是归档过程本身留下的“第二层历史”。
+Explain Merkle Directed Acyclic Graph (DAG)（Merkle 有向无环图）# Software Heritage 的整个数据集合本质上是一个巨大的 Merkle DAG。 在这套结构中：">
+  <meta itemprop="wordCount" content="120">
+
+<title>Software Heritage | Netizen&#39;s Guide to Preserving Github Repositories</title>
+<link rel="icon" href="/repopres/favicon.png" >
+<link rel="manifest" href="/repopres/manifest.json">
+<link rel="canonical" href="http://localhost:1313/repopres/en/zh/docs/%E5%8F%91%E5%B8%83/%E5%85%B3%E4%BA%8E%E8%BD%AF%E4%BB%B6%E9%81%97%E4%BA%A7/">
+<link rel="stylesheet" href="/repopres/book.min.6970156cec683193d93c9c4edaf0d56574e4361df2e0c1be4f697ae81c3ba55f.css" integrity="sha256-aXAVbOxoMZPZPJxO2vDVZXTkNh3y4MG&#43;T2l66Bw7pV8=" crossorigin="anonymous">
+
+
+  <script defer src="/repopres/fuse.min.js"></script>
+  <script defer src="/repopres/en.search.min.6869d982ac80f1d7a20a4a402059c18b1e04a6f608b126a5e86d1632ff9eb6d2.js" integrity="sha256-aGnZgqyA8deiCkpAIFnBix4EpvYIsSal6G0WMv&#43;ettI=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-zh">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/repopres/en/"><span>Netizen&#39;s Guide to Preserving Github Repositories</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+  
+    
+  
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex">
+      <a role="button">
+        <img src="/repopres/icons/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+      <img src="/repopres/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/repopres/zh/" class="flex flex-auto">
+          中文
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      About</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/about/repopres/" class="">
+      Repopres</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Posts</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/introduction/" class="">
+      Introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/first-step/" class="">
+      First steps: Evaluating</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/decision-guide/" class="">
+      Decision Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/local-solution/" class="">
+      Local Solution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/software-heritage/" class="">
+      Software Heritage</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/institution/" class="">
+      Institution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/p2p-software-sharing-communities/" class="">
+      P2P Software-Sharing Communities</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/how-to-get-more-involved/" class="">
+      How to get more involved</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Contributions</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/contributions/contributions/" class="">
+      Contributions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/repopres/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Software Heritage</h3>
+
+  <label for="toc-control">
+    
+    <img src="/repopres/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#关于软件遗产">关于软件遗产</a></li>
+        <li><a href="#software-heritage-采集流程">Software Heritage 采集流程</a></li>
+        <li><a href="#phases阶段">Phases（阶段）</a></li>
+        <li><a href="#explain-merkle-directed-acyclic-graph-dagmerkle-有向无环图">Explain Merkle Directed Acyclic Graph (DAG)（Merkle 有向无环图）</a></li>
+        <li><a href="#how-often-software-heritage-scans-for-new-codesoftware-heritage-多久抓取一次新代码">How often Software Heritage scans for new code（Software Heritage 多久抓取一次新代码）</a></li>
+        <li><a href="#where-they-keep-their-data他们的数据存放在哪里">Where they keep their data（他们的数据存放在哪里）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h3 id="关于软件遗产">关于软件遗产<a class="anchor" href="#%e5%85%b3%e4%ba%8e%e8%bd%af%e4%bb%b6%e9%81%97%e4%ba%a7">#</a></h3>
+<p>Software Heritage 成立于 2016 年，由 Inria 发起，并与 UNESCO 合作。
+它的使命是：<strong>“收集、保存，并让所有曾经写过的软件源代码可以被方便访问”</strong>。
+他们主要从各种平台收集源代码，其中最重要的来源之一就是 GitHub。</p>
+<p>你可以先访问他们的在线档案：
+<a href="https://archive.softwareheritage.org/">https://archive.softwareheritage.org/</a>
+如果你的仓库还不在其中，可以通过保存请求页面发起 “origin save request”：
+<a href="https://archive.softwareheritage.org/save/">https://archive.softwareheritage.org/save/</a></p>
+<hr>
+<h3 id="software-heritage-采集流程">Software Heritage 采集流程<a class="anchor" href="#software-heritage-%e9%87%87%e9%9b%86%e6%b5%81%e7%a8%8b">#</a></h3>
+<p>在 2021 年的研究论文中，Software Heritage 提出了 <strong>Software Heritage Acquisition Process（SWHAP）</strong> 的概念，用来描述他们如何系统性地收集和整理软件源代码。这套流程的目标是：</p>
+<ul>
+<li>覆盖尽可能多的软件托管平台；</li>
+<li>保存完整的开发历史，而不仅仅是一份最新快照；</li>
+<li>记录清楚来源、作者和后期整理者等“谱系信息”。</li>
+</ul>
+<hr>
+<h3 id="phases阶段">Phases（阶段）<a class="anchor" href="#phases%e9%98%b6%e6%ae%b5">#</a></h3>
+<p>（原文此处使用省略号，详细阶段可根据 SWHAP 论文补充）</p>
+<p>在具体的工作流程中，元数据表里通常会记录：</p>
+<ul>
+<li>director name（项目负责人）</li>
+<li>author name / email（作者姓名与邮箱）</li>
+<li>date original（最初发布日期）</li>
+<li>curator name / email（整理者姓名与邮箱）</li>
+<li>release tag（版本标签）</li>
+<li>commit message（整理团队写下的简短说明）</li>
+</ul>
+<p>值得注意的是，现代版本控制系统（VCS）往往有两套不同的元数据：</p>
+<ol>
+<li>一套来自原始作者与开发团队（谁写了代码、何时提交）；</li>
+<li>另一套来自后期的整理者或机构（谁抓取、谁审核、谁导入到档案系统）。</li>
+</ol>
+<p>这种区分可以帮助研究者理解：
+哪些信息来自原始开发活动，哪些则是归档过程本身留下的“第二层历史”。</p>
+<hr>
+<h3 id="explain-merkle-directed-acyclic-graph-dagmerkle-有向无环图">Explain Merkle Directed Acyclic Graph (DAG)（Merkle 有向无环图）<a class="anchor" href="#explain-merkle-directed-acyclic-graph-dagmerkle-%e6%9c%89%e5%90%91%e6%97%a0%e7%8e%af%e5%9b%be">#</a></h3>
+<p>Software Heritage 的整个数据集合本质上是一个巨大的 Merkle DAG。
+在这套结构中：</p>
+<ul>
+<li>每一个对象（文件、目录、提交）都通过散列值（hash）唯一标识；</li>
+<li>对象之间的关系（例如一个目录包含哪些文件、一次提交指向哪些父提交）构成一个 <strong>有向无环图（Directed Acyclic Graph）</strong>；</li>
+<li>这样的结构可以：
+<ul>
+<li>避免重复存储相同内容（去重）；</li>
+<li>追踪版本之间的演化关系和重用关系；</li>
+<li>为每个节点建立清晰的 provenance（来源）链条。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="how-often-software-heritage-scans-for-new-codesoftware-heritage-多久抓取一次新代码">How often Software Heritage scans for new code（Software Heritage 多久抓取一次新代码）<a class="anchor" href="#how-often-software-heritage-scans-for-new-codesoftware-heritage-%e5%a4%9a%e4%b9%85%e6%8a%93%e5%8f%96%e4%b8%80%e6%ac%a1%e6%96%b0%e4%bb%a3%e7%a0%81">#</a></h3>
+<p>Software Heritage 使用一种 <strong>adaptive scheduling discipline（自适应调度策略）</strong> 来决定何时重新抓取某个代码托管点：</p>
+<ul>
+<li>对更新频繁、活动活跃的仓库，会更频繁地扫描；</li>
+<li>随时间观察到变化越来越少时，会逐步降低扫描频率；</li>
+<li>这样既能保证新版本被及时收集，又不会浪费过多抓取和存储资源。</li>
+</ul>
+<hr>
+<h3 id="where-they-keep-their-data他们的数据存放在哪里">Where they keep their data（他们的数据存放在哪里）<a class="anchor" href="#where-they-keep-their-data%e4%bb%96%e4%bb%ac%e7%9a%84%e6%95%b0%e6%8d%ae%e5%ad%98%e6%94%be%e5%9c%a8%e5%93%aa%e9%87%8c">#</a></h3>
+<p>（原文提示 “discuss mirrors etc”，即需要根据 Software Heritage 的镜像与备份策略进行补充说明。）
+总体来说，Software Heritage 通过多个镜像站点和合作机构分布式保存数据，以降低单点故障和地域性风险。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#关于软件遗产">关于软件遗产</a></li>
+        <li><a href="#software-heritage-采集流程">Software Heritage 采集流程</a></li>
+        <li><a href="#phases阶段">Phases（阶段）</a></li>
+        <li><a href="#explain-merkle-directed-acyclic-graph-dagmerkle-有向无环图">Explain Merkle Directed Acyclic Graph (DAG)（Merkle 有向无环图）</a></li>
+        <li><a href="#how-often-software-heritage-scans-for-new-codesoftware-heritage-多久抓取一次新代码">How often Software Heritage scans for new code（Software Heritage 多久抓取一次新代码）</a></li>
+        <li><a href="#where-they-keep-their-data他们的数据存放在哪里">Where they keep their data（他们的数据存放在哪里）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

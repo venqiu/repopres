@@ -1,33 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>//localhost:1313/docs/posts/introduction/</loc>
-  </url><url>
-    <loc>//localhost:1313/docs/posts/first-step/</loc>
-  </url><url>
-    <loc>//localhost:1313/docs/posts/decision-guide/</loc>
-  </url><url>
-    <loc>//localhost:1313/docs/posts/local-solution/</loc>
-  </url><url>
-    <loc>//localhost:1313/docs/posts/software-heritage/</loc>
-  </url><url>
-    <loc>//localhost:1313/docs/posts/institution/</loc>
-  </url><url>
-    <loc>//localhost:1313/docs/posts/p2p-software-sharing-communities/</loc>
-  </url><url>
-    <loc>//localhost:1313/docs/posts/how-to-get-more-involved/</loc>
-  </url><url>
-    <loc>//localhost:1313/docs/about/</loc>
-  </url><url>
-    <loc>//localhost:1313/docs/about/repopres/</loc>
-  </url><url>
-    <loc>//localhost:1313/docs/contributions/</loc>
-  </url><url>
-    <loc>//localhost:1313/docs/contributions/contributions/</loc>
-  </url><url>
-    <loc>//localhost:1313/docs/</loc>
-  </url><url>
-    <loc>//localhost:1313/</loc>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>http://localhost:1313/repopres/en/sitemap.xml</loc>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://localhost:1313/repopres/zh/sitemap.xml</loc>
+    
+  </sitemap>
+  
+</sitemapindex>

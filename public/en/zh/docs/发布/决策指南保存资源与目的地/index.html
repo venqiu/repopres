@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/repopres/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=repopres/livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="决策指南：保存资源与目的地
+根据你的身份、可用资源和技术能力，你可以选择不同的路径来保存软件仓库：
+完全由自己在本地保存； 把源代码交给像 Software Heritage 这样的公共软件档案库； 或者与某个机构的数字保存系统合作。 每一种方案都有优点与局限，你可以根据下面的特点作出选择。
+本地保存路线# Pros 优点：
+只需要依赖你自己，不需要等待外部机构审批。 你可以自己制定保存策略： 例如文件夹结构、想要保存哪些相关材料（文档、截图、论文等）、需要记录哪些说明信息。 隐私控制完全在你手里： 你可以决定谁能访问这些软件、副本存放在哪里。 Cons 缺点：
+…（此处原文用省略号表示，具体劣势可根据你的实际情况补充） Software Heritage Route（Software Heritage 路线）# Pros 优点：
+有机构背书的长期项目，并且有稳定的资金与持续运营。 归档流程严谨、集中管理，适合长期保存。 你的软件会与其他项目放在一起，被放入更大的历史语境中——这对软件史研究非常有价值。 Cons 缺点：
+受欧洲版权法（European copyright law）约束。 元数据字段由 Software Heritage 定义，用户无法随意更改。 归档决策需要经过审核，某些请求可能不会被接受。 Institutional Route（机构路线）# Pros 优点：
+机构层面的资源与稳定性（经费、硬件、长期规划等）。 可以与数字保存人员（digital preservationists）及其他同事合作，为软件提供更完整的文献与上下文。 Cons 缺点：
+需要使用你所在机构已经部署的 DAMS（Digital Asset Management System）， 而这些系统未必是专门为软件归档设计的，有时会不太适配源代码和版本控制的特性。 ">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/repopres/en/zh/docs/%E5%8F%91%E5%B8%83/%E5%86%B3%E7%AD%96%E6%8C%87%E5%8D%97%E4%BF%9D%E5%AD%98%E8%B5%84%E6%BA%90%E4%B8%8E%E7%9B%AE%E7%9A%84%E5%9C%B0/">
+  <meta property="og:site_name" content="Netizen&#39;s Guide to Preserving Github Repositories">
+  <meta property="og:title" content="Decision Guide">
+  <meta property="og:description" content="决策指南：保存资源与目的地
+根据你的身份、可用资源和技术能力，你可以选择不同的路径来保存软件仓库：
+完全由自己在本地保存； 把源代码交给像 Software Heritage 这样的公共软件档案库； 或者与某个机构的数字保存系统合作。 每一种方案都有优点与局限，你可以根据下面的特点作出选择。
+本地保存路线# Pros 优点：
+只需要依赖你自己，不需要等待外部机构审批。 你可以自己制定保存策略： 例如文件夹结构、想要保存哪些相关材料（文档、截图、论文等）、需要记录哪些说明信息。 隐私控制完全在你手里： 你可以决定谁能访问这些软件、副本存放在哪里。 Cons 缺点：
+…（此处原文用省略号表示，具体劣势可根据你的实际情况补充） Software Heritage Route（Software Heritage 路线）# Pros 优点：
+有机构背书的长期项目，并且有稳定的资金与持续运营。 归档流程严谨、集中管理，适合长期保存。 你的软件会与其他项目放在一起，被放入更大的历史语境中——这对软件史研究非常有价值。 Cons 缺点：
+受欧洲版权法（European copyright law）约束。 元数据字段由 Software Heritage 定义，用户无法随意更改。 归档决策需要经过审核，某些请求可能不会被接受。 Institutional Route（机构路线）# Pros 优点：
+机构层面的资源与稳定性（经费、硬件、长期规划等）。 可以与数字保存人员（digital preservationists）及其他同事合作，为软件提供更完整的文献与上下文。 Cons 缺点：
+需要使用你所在机构已经部署的 DAMS（Digital Asset Management System）， 而这些系统未必是专门为软件归档设计的，有时会不太适配源代码和版本控制的特性。">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="zh">
+
+
+  <meta itemprop="name" content="Decision Guide">
+  <meta itemprop="description" content="决策指南：保存资源与目的地
+根据你的身份、可用资源和技术能力，你可以选择不同的路径来保存软件仓库：
+完全由自己在本地保存； 把源代码交给像 Software Heritage 这样的公共软件档案库； 或者与某个机构的数字保存系统合作。 每一种方案都有优点与局限，你可以根据下面的特点作出选择。
+本地保存路线# Pros 优点：
+只需要依赖你自己，不需要等待外部机构审批。 你可以自己制定保存策略： 例如文件夹结构、想要保存哪些相关材料（文档、截图、论文等）、需要记录哪些说明信息。 隐私控制完全在你手里： 你可以决定谁能访问这些软件、副本存放在哪里。 Cons 缺点：
+…（此处原文用省略号表示，具体劣势可根据你的实际情况补充） Software Heritage Route（Software Heritage 路线）# Pros 优点：
+有机构背书的长期项目，并且有稳定的资金与持续运营。 归档流程严谨、集中管理，适合长期保存。 你的软件会与其他项目放在一起，被放入更大的历史语境中——这对软件史研究非常有价值。 Cons 缺点：
+受欧洲版权法（European copyright law）约束。 元数据字段由 Software Heritage 定义，用户无法随意更改。 归档决策需要经过审核，某些请求可能不会被接受。 Institutional Route（机构路线）# Pros 优点：
+机构层面的资源与稳定性（经费、硬件、长期规划等）。 可以与数字保存人员（digital preservationists）及其他同事合作，为软件提供更完整的文献与上下文。 Cons 缺点：
+需要使用你所在机构已经部署的 DAMS（Digital Asset Management System）， 而这些系统未必是专门为软件归档设计的，有时会不太适配源代码和版本控制的特性。">
+  <meta itemprop="wordCount" content="55">
+
+<title>Decision Guide | Netizen&#39;s Guide to Preserving Github Repositories</title>
+<link rel="icon" href="/repopres/favicon.png" >
+<link rel="manifest" href="/repopres/manifest.json">
+<link rel="canonical" href="http://localhost:1313/repopres/en/zh/docs/%E5%8F%91%E5%B8%83/%E5%86%B3%E7%AD%96%E6%8C%87%E5%8D%97%E4%BF%9D%E5%AD%98%E8%B5%84%E6%BA%90%E4%B8%8E%E7%9B%AE%E7%9A%84%E5%9C%B0/">
+<link rel="stylesheet" href="/repopres/book.min.6970156cec683193d93c9c4edaf0d56574e4361df2e0c1be4f697ae81c3ba55f.css" integrity="sha256-aXAVbOxoMZPZPJxO2vDVZXTkNh3y4MG&#43;T2l66Bw7pV8=" crossorigin="anonymous">
+
+
+  <script defer src="/repopres/fuse.min.js"></script>
+  <script defer src="/repopres/en.search.min.6869d982ac80f1d7a20a4a402059c18b1e04a6f608b126a5e86d1632ff9eb6d2.js" integrity="sha256-aGnZgqyA8deiCkpAIFnBix4EpvYIsSal6G0WMv&#43;ettI=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-zh">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/repopres/en/"><span>Netizen&#39;s Guide to Preserving Github Repositories</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+  
+    
+  
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex">
+      <a role="button">
+        <img src="/repopres/icons/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+      <img src="/repopres/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/repopres/zh/" class="flex flex-auto">
+          中文
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      About</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/about/repopres/" class="">
+      Repopres</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Posts</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/introduction/" class="">
+      Introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/first-step/" class="">
+      First steps: Evaluating</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/decision-guide/" class="">
+      Decision Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/local-solution/" class="">
+      Local Solution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/software-heritage/" class="">
+      Software Heritage</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/institution/" class="">
+      Institution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/p2p-software-sharing-communities/" class="">
+      P2P Software-Sharing Communities</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/how-to-get-more-involved/" class="">
+      How to get more involved</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Contributions</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/contributions/contributions/" class="">
+      Contributions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/repopres/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Decision Guide</h3>
+
+  <label for="toc-control">
+    
+    <img src="/repopres/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#本地保存路线">本地保存路线</a></li>
+        <li><a href="#software-heritage-routesoftware-heritage-路线">Software Heritage Route（Software Heritage 路线）</a></li>
+        <li><a href="#institutional-route机构路线">Institutional Route（机构路线）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p><strong>决策指南：保存资源与目的地</strong></p>
+<p>根据你的身份、可用资源和技术能力，你可以选择不同的路径来保存软件仓库：</p>
+<ul>
+<li>完全由自己在本地保存；</li>
+<li>把源代码交给像 <strong>Software Heritage</strong> 这样的公共软件档案库；</li>
+<li>或者与某个机构的数字保存系统合作。</li>
+</ul>
+<p>每一种方案都有优点与局限，你可以根据下面的特点作出选择。</p>
+<hr>
+<h3 id="本地保存路线">本地保存路线<a class="anchor" href="#%e6%9c%ac%e5%9c%b0%e4%bf%9d%e5%ad%98%e8%b7%af%e7%ba%bf">#</a></h3>
+<ul>
+<li>
+<p><strong>Pros 优点：</strong></p>
+<ul>
+<li>只需要依赖你自己，不需要等待外部机构审批。</li>
+<li>你可以自己制定保存策略：
+例如文件夹结构、想要保存哪些相关材料（文档、截图、论文等）、需要记录哪些说明信息。</li>
+<li>隐私控制完全在你手里：
+你可以决定谁能访问这些软件、副本存放在哪里。</li>
+</ul>
+</li>
+<li>
+<p><strong>Cons 缺点：</strong></p>
+<ul>
+<li>…（此处原文用省略号表示，具体劣势可根据你的实际情况补充）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="software-heritage-routesoftware-heritage-路线">Software Heritage Route（Software Heritage 路线）<a class="anchor" href="#software-heritage-routesoftware-heritage-%e8%b7%af%e7%ba%bf">#</a></h3>
+<ul>
+<li>
+<p><strong>Pros 优点：</strong></p>
+<ul>
+<li>有机构背书的长期项目，并且有稳定的资金与持续运营。</li>
+<li>归档流程严谨、集中管理，适合长期保存。</li>
+<li>你的软件会与其他项目放在一起，被放入更大的历史语境中——这对软件史研究非常有价值。</li>
+</ul>
+</li>
+<li>
+<p><strong>Cons 缺点：</strong></p>
+<ul>
+<li>受欧洲版权法（European copyright law）约束。</li>
+<li>元数据字段由 Software Heritage 定义，用户无法随意更改。</li>
+<li>归档决策需要经过审核，某些请求可能不会被接受。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="institutional-route机构路线">Institutional Route（机构路线）<a class="anchor" href="#institutional-route%e6%9c%ba%e6%9e%84%e8%b7%af%e7%ba%bf">#</a></h3>
+<ul>
+<li>
+<p><strong>Pros 优点：</strong></p>
+<ul>
+<li>机构层面的资源与稳定性（经费、硬件、长期规划等）。</li>
+<li>可以与数字保存人员（digital preservationists）及其他同事合作，为软件提供更完整的文献与上下文。</li>
+</ul>
+</li>
+<li>
+<p><strong>Cons 缺点：</strong></p>
+<ul>
+<li>需要使用你所在机构已经部署的 DAMS（Digital Asset Management System），
+而这些系统未必是专门为软件归档设计的，有时会不太适配源代码和版本控制的特性。</li>
+</ul>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#本地保存路线">本地保存路线</a></li>
+        <li><a href="#software-heritage-routesoftware-heritage-路线">Software Heritage Route（Software Heritage 路线）</a></li>
+        <li><a href="#institutional-route机构路线">Institutional Route（机构路线）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+    </div>
+  </aside>
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

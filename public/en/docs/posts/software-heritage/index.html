@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/repopres/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=repopres/livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Software Heritage:
+About Software Heritage
+Software Heritage was founded in 2016, launched by Inria in partnership with UNESCO. Their mission is to “collect, preserve, and make readily accessible all the software source code ever written” (Source).Check if your repository is already by visiting their online archive at https://archive.softwareheritage.org/. If not, then issue an origin save request here.
+The Software Heritage Acquisition Process
+In their 2021 research paper, they outlined what they call the “Software Heritage Acquisition Process” (SWHAP). This process was developed to preserve source code from various sources, including but not limited to software development platforms like Github and Gitlab, legacy platforms like Google Code and Gitorious, package manager repositories like CPAn and npm, and FOSS (free and open source software) distributions such as Fedora and FreeBSD. The following contains a general overview of SWHAP so you can evaluate if Software Heritage is the right place for the code you’d like to preserve. You can find more information from their published research articles
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/repopres/en/docs/posts/software-heritage/">
+  <meta property="og:site_name" content="Netizen&#39;s Guide to Preserving Github Repositories">
+  <meta property="og:title" content="Software Heritage">
+  <meta property="og:description" content="Software Heritage:
+About Software Heritage
+Software Heritage was founded in 2016, launched by Inria in partnership with UNESCO. Their mission is to “collect, preserve, and make readily accessible all the software source code ever written” (Source).Check if your repository is already by visiting their online archive at https://archive.softwareheritage.org/. If not, then issue an origin save request here.
+The Software Heritage Acquisition Process
+In their 2021 research paper, they outlined what they call the “Software Heritage Acquisition Process” (SWHAP). This process was developed to preserve source code from various sources, including but not limited to software development platforms like Github and Gitlab, legacy platforms like Google Code and Gitorious, package manager repositories like CPAn and npm, and FOSS (free and open source software) distributions such as Fedora and FreeBSD. The following contains a general overview of SWHAP so you can evaluate if Software Heritage is the right place for the code you’d like to preserve. You can find more information from their published research articles">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+
+
+  <meta itemprop="name" content="Software Heritage">
+  <meta itemprop="description" content="Software Heritage:
+About Software Heritage
+Software Heritage was founded in 2016, launched by Inria in partnership with UNESCO. Their mission is to “collect, preserve, and make readily accessible all the software source code ever written” (Source).Check if your repository is already by visiting their online archive at https://archive.softwareheritage.org/. If not, then issue an origin save request here.
+The Software Heritage Acquisition Process
+In their 2021 research paper, they outlined what they call the “Software Heritage Acquisition Process” (SWHAP). This process was developed to preserve source code from various sources, including but not limited to software development platforms like Github and Gitlab, legacy platforms like Google Code and Gitorious, package manager repositories like CPAn and npm, and FOSS (free and open source software) distributions such as Fedora and FreeBSD. The following contains a general overview of SWHAP so you can evaluate if Software Heritage is the right place for the code you’d like to preserve. You can find more information from their published research articles">
+  <meta itemprop="wordCount" content="742">
+
+<title>Software Heritage | Netizen&#39;s Guide to Preserving Github Repositories</title>
+<link rel="icon" href="/repopres/favicon.png" >
+<link rel="manifest" href="/repopres/manifest.json">
+<link rel="canonical" href="http://localhost:1313/repopres/en/docs/posts/software-heritage/">
+  <link rel="alternate" hreflang="zh" href="http://localhost:1313/repopres/zh/docs/posts/software-heritage/" title="Software Heritage">
+<link rel="stylesheet" href="/repopres/book.min.6970156cec683193d93c9c4edaf0d56574e4361df2e0c1be4f697ae81c3ba55f.css" integrity="sha256-aXAVbOxoMZPZPJxO2vDVZXTkNh3y4MG&#43;T2l66Bw7pV8=" crossorigin="anonymous">
+
+
+  <script defer src="/repopres/fuse.min.js"></script>
+  <script defer src="/repopres/en.search.min.fbd3e5a304830cd94d594b0e12cd6c3cf093cb9271804757ef4d69bf5d77e65d.js" integrity="sha256-&#43;9PlowSDDNlNWUsOEs1sPPCTy5JxgEdX701pv1135l0=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/repopres/en/"><span>Netizen&#39;s Guide to Preserving Github Repositories</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+  
+    
+  
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex">
+      <a role="button">
+        <img src="/repopres/icons/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+      <img src="/repopres/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/repopres/zh/docs/posts/software-heritage/" class="flex flex-auto">
+          中文
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      About</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/docs/about/repopres/" class="">
+      Repopres</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Posts</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/docs/posts/introduction/" class="">
+      Introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/docs/posts/first-step/" class="">
+      First steps: Evaluating</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/docs/posts/decision-guide/" class="">
+      Decision Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/docs/posts/local-solution/" class="">
+      Local Solution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/docs/posts/software-heritage/" class="active">
+      Software Heritage</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/docs/posts/institution/" class="">
+      Institution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/docs/posts/p2p-software-sharing-communities/" class="">
+      P2P Software-Sharing Communities</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/docs/posts/how-to-get-more-involved/" class="">
+      How to get more involved</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Contributions</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/docs/contributions/contributions/" class="">
+      Contributions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/repopres/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Software Heritage</h3>
+
+  <label for="toc-control">
+    
+  </label>
+</div>
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p><strong>Software Heritage:</strong></p>
+<p><strong>About Software Heritage</strong></p>
+<p>Software Heritage was founded in 2016, launched by Inria in partnership with UNESCO. Their mission is to “collect, preserve, and make readily accessible all the software source code ever written” (<a href="https://hal.science/hal-03375572">Source</a>).Check if your repository is already by visiting their online archive at <a href="https://archive.softwareheritage.org/">https://archive.softwareheritage.org/</a>. If not, then issue an origin save request <a href="https://archive.softwareheritage.org/save/">here</a>.</p>
+<p><strong>The Software Heritage Acquisition Process</strong></p>
+<p>In their 2021 research paper, they outlined what they call the “Software Heritage Acquisition Process” (SWHAP). This process was developed to preserve source code from various sources, including but not limited to software development platforms like Github and Gitlab, legacy platforms like Google Code and Gitorious, package manager repositories like CPAn and npm, and FOSS (free and open source software) distributions such as Fedora and FreeBSD. The following contains a general overview of SWHAP so you can evaluate if Software Heritage is the right place for the code you’d like to preserve. You can find more information from their published research articles</p>
+<p><strong>Phases</strong></p>
+<ul>
+<li>Collect: Find the source code and related materials (e.g. research articles, pictures, drawings, user manuals) and gather it ‘as is’</li>
+<li>Curate: Analyze and clean up the structure of raw materials (source code). This includes clarifying the production dates, contributors, and general history and evolution of the software. This information is logged as metadata, using vocabulary from <a href="https://codemeta.github.io/terms/">CodeMet</a> (e.g. software runtime platform, programming languages, authors, license)</li>
+<li>Archive: Upload or contribute the each category of materials to the appropriate infrastructures: Software Heritage for source code, Wikimedia for images and videos, open access repositories for research articles, Wikidata for software descriptions and properties, and so on</li>
+<li>Present: Create presentations, exhibitions, events, or websites from the results</li>
+</ul>
+<p><strong>Software artifacts: How SWHAP divides their components</strong></p>
+<p>The following categories are how Software Heritage distinguishes the different components that make up the “raw materials” of software:</p>
+<ul>
+<li>file contents (AKA ‘blobs’): the raw content of the source code in the form of bytes</li>
+<li>directories: a list of named directories, each pointing to other artifacts</li>
+<li>revisions (AKA ‘commits’): each recorded copy of the root directory is known as a revision</li>
+<li>releases (AKA tags): milestone revisions</li>
+<li>origins (software provenance): fine grained references to where source code artifacts have been retrieved from.</li>
+<li>projects: abstract entities that relate together several development resources, including websites, issue trackers, mailing lists, as well as software origins</li>
+<li>snapshots: records all entry points found there and where they pointed to. This would include branches for VCS, and suites for package distributions</li>
+<li>visits: link together software origins with snapshots. This is essentially a time stamp of when Software Heritage recorded a snapshot</li>
+</ul>
+<p><strong>Metadata: version_history.csv</strong> **
+**For each piece of software, the SWHAP recommends that preservationists collect relevant metadata file for each version of the software, in the form of a spreadsheet titled version_history.csv. Here is an example of one. These typically contain:</p>
+<ul>
+<li>director name: name of directory containing the source code of this version</li>
+<li>author name: name of the main author</li>
+<li>date original: original date when this version was made</li>
+<li>curator name: name of the curator person or team</li>
+<li>curator email: reference email of the acquisition process</li>
+<li>release tag: tag name if the directory contains a release, empty otherwise</li>
+<li>commit message: text containing a brief note from the curator team</li>
+</ul>
+<p>It is worth noting that modern VCS allow two sets of metadata: one for the author and one for the committer. This allows for the distinguishing between the original author of a software, and the person archiving it.</p>
+<p><strong>Explain Merkle Direct Acyclic Graph (DAG) as their way of preventing unnecessary redundancies</strong></p>
+<p>Software Heritages’ collection is in essence a big Merkle Direct Acyclic Graph (DAG), a multi-node structure in which each of the aforementioned software artifacts (file contents, directories, revisions) constitute one node. With each node having its own intrinsic cryptographic hash, Software Heritage is able to to avoid unnecessary duplication of code, contextualize source with the entire development of all source code in the collection, and establish provenance and code reuse.</p>
+<p><strong>How often Software Heritage scans for new code</strong></p>
+<p>Software Heritage uses an adaptive scheduling discipline, specifically an “exponential backoff strategy.” This means that they run periodic checks of the source code they collect to scan for changes and edits. If the scan shows changes for any given software origin, they increase the frequency that that site is visited in the future. If the check does not show changes for the software, they decrease the scanning frequency.</p>
+<p><strong>Where they keep their data</strong></p>
+<p>[discuss mirrors etc)</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/repopres/en/docs/posts/local-solution/" class="flex align-center">
+        <img src="/repopres/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Local Solution</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/repopres/en/docs/posts/institution/" class="flex align-center">
+        <span>Institution</span>
+        <img src="/repopres/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
