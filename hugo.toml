@@ -1,15 +1,4 @@
-baseURL = "baseURL = "https://hw4090-create.github.io/Netizen-s-Guide-to-Preserving-Github-Repositories/"
-languageCode = 'en-us'
-title = 'Netizen of Guide to Preserving Github Repositories'
-theme = "hugo-book"
-
-enableGitInfo = true
-disableKinds = ['taxonomy', 'taxonomyTerm']
-
-[params]
-  BookTheme = 'auto'      
-  BookToC = true         
-  BookSection = 'docs'   
+baseURL = "https://hw4090-create.github.io/repopres/"
 title   = "Netizen's Guide to Preserving Github Repositories"
 theme   = "hugo-book"
 
@@ -32,4 +21,3 @@ defaultContentLanguageInSubdir = true
     languageName = "中文"
     weight       = 2
     contentDir   = "content/zh"
->>>>>>> ven-based
