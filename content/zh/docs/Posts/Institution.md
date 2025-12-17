@@ -1,38 +1,69 @@
+**Institution（机构）**
+
+本节面向在各类文化机构（archives、libraries、museums 等）中从事保存工作的专业人员，尤其是那些希望在本机构中开展或改进基于软件媒介（software-based media）归档工作的读者。为撰写本节内容，我们采访了三位从业者：Jonathan Farbowitz（Metropolitan Museum of Art 的 digital preservationist）、Mark Hellar（SFMoMA 的 creative technology consultant 与 media conservationist），以及 Emma Dickson（digital conservationist 与 creative technologist）。通过这些访谈，我们大致了解了他们如何在既有的 DAMS（Digital Asset Management Systems）和相关元数据标准的框架内，利用已在用的档案软件处理软件收藏。需要特别说明的是，这几位受访者都主要处理基于软件的艺术作品（software-based artworks），这类作品往往伴随着独特的复杂性和容易被忽视的问题。以下是一些你在机构实践中可以重点思考的方面。  
+
 ---
-title: "机构策略（Institution）"
-weight: 6
+
+**区分二进制可执行文件与源代码  
+(Distinguishing between binary executables and source code)**
+
+在保存 software-based media 时，理想情况下应该同时归档**二进制可执行程序（binary executable）**以及**生成它的源代码（source code）**。由于源代码通常是通过版本控制系统（VCS，例如前文提到的那些系统）进行管理的，很多机构会选择在同一个 VCS 环境中保存作品的源代码。VCS 的设计本身就是为了记录版本历史以及随时间发生的各种修改。  
+
+因此，一个重要的决策是：  
+- 你的源代码是否会长期保存在 VCS 中？  
+- 是否会将该源代码的一个克隆（clone）与其他文档（documentation）、附加材料（ancillary materials）、作品输出（outputs）以及相关软件一起，存放在同一个 DAMS 中？  
+
 ---
 
-**机构**
+**软件保护：让软件再次运行  
+(Software conservation: making software work again)**
 
-本节面向在各类机构（archives、libraries、museums 等）中从事保存工作的专业人员，希望为他们在文化机构中归档基于软件的媒介提供一些参考。内容综合了 Jonathan Farbowitz（Guggenheim 的数字保存人员）、Mark Hellar（SFMoMA 的 creative technology consultant 与 media conservationist）以及 Emma Dickson（数字保存与 creative technologist）的经验，讨论如何利用现有的 DAMS（Digital Asset Management Systems）和元数据标准来处理软件收藏，以及这些系统中常见的空白与被忽视的地方。下面是一些你在规划机构策略时可以重点考虑的问题。  
+如果你所在的是一个需要保存软件媒介的博物馆或类似机构，你很可能会遇到**多年未更新的源代码**。在这种情况下，可能需要进行重新编码（recoding）、将代码翻译为更新的编程语言、替换过时的固件（firmware）等工作。  
 
-**区分二进制可执行文件与源代码**
+在处理此类情况时，可以借鉴传统档案实践中的一些保存原则来“修复”软件，其中一条非常重要的经验是：  
 
-在保存 software-based media 时，如果条件允许，既要归档二进制可执行文件（binary executables），也要归档源代码（source code）。二进制可执行文件记录了当年软件具体是如何运行的，而源代码则展示了软件是如何被编写出来的，并且在将来的迁移（migration）或仿真（emulation）中会非常重要。除此之外，你还应当考虑保存构建脚本（build scripts）、技术与使用文档（documentation）、相关附加材料（ancillary materials）、软件输出结果（outputs），以及与之配套的其他软件。  
+- **不要真正删除代码，而是用注释（comment out）的方式保留**；  
+- 对所有改动进行**细致、完整的记录（document all changes carefully）**。  
 
-**软件保护：让软件再次运行**
+这样既有利于追溯修改历史，也为将来的再现或重新理解提供依据。  
 
-如果你所在的机构（例如美术馆或博物馆）需要保存基于软件的媒介，你可能会接触到艺术作品、CD-ROM、游戏，或者已经无法在当前操作系统上直接运行的定制装置。在这些情况下，software conservation 的目标，是在可控的前提下让软件“再活一次”——也就是尽可能重建或仿真原有的运行环境。这可能涉及搭建虚拟机（virtual machines）、维护旧硬件（legacy hardware），或者与外部开发者合作。  
+---
 
-同时，也可以借鉴传统档案实践中的一些原则来“修复”或调整软件：例如 **不要真正删除代码，而是用注释（comment out）的方式保留旧代码**；并且要仔细记录所有改动（document all changes carefully）。  
+**为保存实践制定指南  
+(Creating guidelines for preservation practices)**
 
-**为保存实践制定指南**
+由于 software-based art 往往不仅仅包含“代码”本身，还会涉及依赖项（dependencies）、固件（firmware）、机械装置（machinery）、硬件（hardware）等多种组件，因此几乎**每一个个案都是独一无二的**。  
 
-由于 software-based art 通常不仅仅包含“代码”本身，还涉及硬件、网络服务、外部 API、特定操作系统环境等多种组件，为机构制定一套保存指南，可以帮助工作人员在以下问题上做出相对一致的决策：需要捕获哪些要素、如何进行描述、谁来负责、以及在什么时候应该选择迁移、仿真或停止维护等。你可以与 conservators、registrars 以及 IT 部门合作，确定最低元数据要求、优先使用的格式，以及相应的决策流程（decision trees）。  
+要弄清楚“哪些组件是作品得以存在和运行所必需的”，通常是一个**高度定制化且复杂的过程**。对机构来说，为这类作品制定一套保存实践指南（guidelines）非常重要，它可以帮助团队在面对具体案例时：  
 
-对每一件作品梳理依赖关系，并记录“哪些是必需组件”，始终是一个定制化且复杂的过程，但这一步对于长期保存和未来再现非常关键。  
+- 确定需要捕获和记录哪些要素；  
+- 讨论应如何对这些要素进行描述和建模；  
+- 决定谁来承担哪些角色与责任；  
+- 在何种条件下选择迁移（migration）、仿真（emulation）或者其他替代方案。  
 
-**报告：身份、处理与迭代**
+---
 
-许多机构会通过不同类型的报告来记录软件作品在其生命周期中的变化，例如：
+**报告：身份、处理与迭代  
+(Reports: Identity, Treatment, Iteration)**
 
-- **Identity report**：用于界定作品/软件的“身份”，包括版本、依赖、运行环境等关键信息；  
-- **Treatment report**：记录针对该作品采取过哪些处理措施（迁移、修复、仿真配置等）；  
-- **Iteration report**：当作品多次展出或更新时，用来追踪不同迭代之间的差异和决策原因。  
+很多机构在作品征集（acquisition）或保存（conservation）过程中，会撰写与之相关的报告。正如 Joanna Phillips（2015）所讨论的那样，**identity report（身份报告）**的目的并不是记录针对某一展出场地的具体解决方案，而是用来刻画作品在不同情境下的表现行为（behaviors），并梳理其“定义性特征”。身份报告应当在这些特征发生变化时不断更新。  
 
-这些报告可以在人员变动或时间推移之后，为后续的保存和再现提供清晰的历史记录与决策依据。  
+你可以参考以下一些 identity report 的示例来设计自己的文档结构，例如：  
+- Guggenheim 针对 Sun Yuan 与 Peng Yu 的作品 *I Can’t Help Myself* 所撰写的 Identity Report；  
+- Met 制定的 Identity Report 格式规范（Identity Report Formatting）；  
+- Smithsonian 使用的 Identity Report 文档。  
 
-**了解你正在归档的程序——与创意技术人员合作** 
+与此相对应，**iteration report（迭代报告）**则更像一个 `version_history.csv`：它为作品的每一次改变建立起一条清晰的历史链条，从而帮助我们理解在具体迭代中做出某些展示或技术决策的原因和背景。  
 
-理解如何保存代码，一个关键前提是真正了解这些媒介本身（know the media）。这往往意味着要与创作者、creative technologists 以及了解底层技术的人紧密合作：一起梳理作品的运行逻辑、依赖环境和潜在风险，从而做出更合理、可持续的保存策略。  
+---
+
+**了解你正在归档的程序——与创意技术人员合作  
+(Know the programs you’re archiving – work with creative technologists)**
+
+要理解如何保存代码，其中最重要的一点就是**真正了解所处理的媒介本身（know the media）**。创意技术（creative technology）领域始终在快速发展，艺术家使用的工具也在不断更迭，因此持续追踪这些工具的演变非常重要。  
+
+在实践中，这往往意味着：  
+- 你自己也保持一定的 creative technology 实践，理解工具与工作流程的变化；  
+- 主动与创作者、creative technologists 以及熟悉底层技术的人合作，共同梳理作品的运行逻辑、依赖环境和潜在风险。  
+
+通过这种方式，机构在制定和执行软件保存策略时，才能在技术可行性和作品完整性之间做出更稳妥、可持续的判断。  
