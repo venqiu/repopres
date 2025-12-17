@@ -1,11 +1,10 @@
-**Institution（机构）**
+**机构**
 
 本节面向在各类文化机构（archives、libraries、museums 等）中从事保存工作的专业人员，尤其是那些希望在本机构中开展或改进基于软件媒介（software-based media）归档工作的读者。为撰写本节内容，我们采访了三位从业者：Jonathan Farbowitz（Metropolitan Museum of Art 的 digital preservationist）、Mark Hellar（SFMoMA 的 creative technology consultant 与 media conservationist），以及 Emma Dickson（digital conservationist 与 creative technologist）。通过这些访谈，我们大致了解了他们如何在既有的 DAMS（Digital Asset Management Systems）和相关元数据标准的框架内，利用已在用的档案软件处理软件收藏。需要特别说明的是，这几位受访者都主要处理基于软件的艺术作品（software-based artworks），这类作品往往伴随着独特的复杂性和容易被忽视的问题。以下是一些你在机构实践中可以重点思考的方面。  
 
 ---
 
-**区分二进制可执行文件与源代码  
-(Distinguishing between binary executables and source code)**
+**区分二进制可执行文件与源代码**
 
 在保存 software-based media 时，理想情况下应该同时归档**二进制可执行程序（binary executable）**以及**生成它的源代码（source code）**。由于源代码通常是通过版本控制系统（VCS，例如前文提到的那些系统）进行管理的，很多机构会选择在同一个 VCS 环境中保存作品的源代码。VCS 的设计本身就是为了记录版本历史以及随时间发生的各种修改。  
 
@@ -15,8 +14,7 @@
 
 ---
 
-**软件保护：让软件再次运行  
-(Software conservation: making software work again)**
+**软件保护：让软件再次运行**
 
 如果你所在的是一个需要保存软件媒介的博物馆或类似机构，你很可能会遇到**多年未更新的源代码**。在这种情况下，可能需要进行重新编码（recoding）、将代码翻译为更新的编程语言、替换过时的固件（firmware）等工作。  
 
@@ -29,8 +27,7 @@
 
 ---
 
-**为保存实践制定指南  
-(Creating guidelines for preservation practices)**
+**为保存实践制定指南**
 
 由于 software-based art 往往不仅仅包含“代码”本身，还会涉及依赖项（dependencies）、固件（firmware）、机械装置（machinery）、硬件（hardware）等多种组件，因此几乎**每一个个案都是独一无二的**。  
 
@@ -43,8 +40,7 @@
 
 ---
 
-**报告：身份、处理与迭代  
-(Reports: Identity, Treatment, Iteration)**
+**报告：身份、处理与迭代**
 
 很多机构在作品征集（acquisition）或保存（conservation）过程中，会撰写与之相关的报告。正如 Joanna Phillips（2015）所讨论的那样，**identity report（身份报告）**的目的并不是记录针对某一展出场地的具体解决方案，而是用来刻画作品在不同情境下的表现行为（behaviors），并梳理其“定义性特征”。身份报告应当在这些特征发生变化时不断更新。  
 
@@ -57,8 +53,7 @@
 
 ---
 
-**了解你正在归档的程序——与创意技术人员合作  
-(Know the programs you’re archiving – work with creative technologists)**
+**了解你正在归档的程序——与创意技术人员合作**
 
 要理解如何保存代码，其中最重要的一点就是**真正了解所处理的媒介本身（know the media）**。创意技术（creative technology）领域始终在快速发展，艺术家使用的工具也在不断更迭，因此持续追踪这些工具的演变非常重要。  
 
