@@ -1,5 +1,5 @@
 ---
-title: "本地解决方案（Local Solution）"
+title: "Local Solution"
 weight: 4
 ---
 
