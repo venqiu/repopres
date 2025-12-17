@@ -1,5 +1,5 @@
 ---
-title: "机构策略（Institution）"
+title: "Institution"
 weight: 6
 ---
 
