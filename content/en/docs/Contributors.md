@@ -10,13 +10,13 @@ weight: 8
 
 ### Interviewees:
 
-Jonathan M Farbowitz
-Emma Dickson
-Mark Hellar
+- Jonathan M Farbowitz
+- Emma Dickson
+- Mark Hellar
 
 ------
 
 ### Writers:
-Koel Chu
-Ven Qiu
-Haoran Wang
+- Koel Chu
+- Ven Qiu
+- Haoran Wang
