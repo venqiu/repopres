@@ -1,5 +1,5 @@
 ---
-title: "贡献者（Contributors）"
+title: "贡献者"
 weight: 8
 ---
 
