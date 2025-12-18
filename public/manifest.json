@@ -1,14 +1,25 @@
 {
+<<<<<<< HEAD
   "name": "Netizen of Guide to Preserving Github Repositories",
   "short_name": "Netizen of Guide to Preserving Github Repositories",
   "start_url": "/",
   "scope": "/",
+=======
+  "name": "Netizen's Guide to Preserving Github Repositories",
+  "short_name": "Netizen's Guide to Preserving Github Repositories",
+  "start_url": "/repopres/",
+  "scope": "/repopres/",
+>>>>>>> ven-based
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
+<<<<<<< HEAD
       "src": "/favicon.svg",
+=======
+      "src": "/repopres/favicon.svg",
+>>>>>>> ven-based
       "sizes": "512x512"
     }
   ]

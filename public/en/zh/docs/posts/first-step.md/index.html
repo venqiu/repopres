@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/repopres/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=repopres/livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="第一步：评估
+在真正开始归档之前，先问自己几个根本性的问题： 你为什么要保存这个仓库？它对谁重要？它在更大的软件生态里处于什么位置？
+你为什么要归档这个仓库？
+弄清动机有助于选择合适的保存策略：
+软件史保存： 为软件发展史贡献一份证据。 个人备份： 确保自己的作品安全、有地方可以找回。 社群保存： 为某个特定社区保存重要的软件资源。 在评估时，你可以考虑：
+你的目标更偏向哪一种？ 是软件历史？ 还是个人备份？ 这个软件是不是已经被保存到其他地方？ 可以先去查一查：Software Heritage 是否已经有这份代码。 GitHub Repository Evaluation Checklist（GitHub 仓库评估清单）： 软件是否相对完整、可用？ 是否还存在尚未解决的重大问题？ 是否依赖其他外部组件（例如外部服务、专有库）——这些东西只靠源代码无法覆盖？ 代码目前托管在哪些平台？ 从常见的开发平台到小众档案库，都要尽量列出。 归档时，能否尽量贴合原本的托管环境？ 例如镜像原始目录结构、保留原始仓库 URL 等。 能否抓取到版本控制系统中完整的开发历史？ 包括各种 VCS：Git、Mercurial、Subversion、Darcs、Bazaar、CVS 等。 对于一些更系统化的软件保存实践，你还可能会遇到专门的元数据表，例如一个 version_history.csv 可能包含：
+director name（项目负责人姓名） author name / email（作者姓名与邮箱） date original（最初发布日期） curator name / email（整理者姓名与邮箱） release tag（版本标签） commit message（提交说明） 可能涉及的任务包括：
+誊写手写的旧代码； 从不同硬件上找回散落的代码副本； 访谈开发者、维护者或使用者，补充背景信息。 这些步骤可以帮助你判断： 这个仓库值得投入多少保存工作，以及最适合把它送往哪一种保存路径。
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/repopres/en/zh/docs/posts/first-step.md/">
+  <meta property="og:site_name" content="Netizen&#39;s Guide to Preserving Github Repositories">
+  <meta property="og:title" content="First steps: Evaluating">
+  <meta property="og:description" content="第一步：评估
+在真正开始归档之前，先问自己几个根本性的问题： 你为什么要保存这个仓库？它对谁重要？它在更大的软件生态里处于什么位置？
+你为什么要归档这个仓库？
+弄清动机有助于选择合适的保存策略：
+软件史保存： 为软件发展史贡献一份证据。 个人备份： 确保自己的作品安全、有地方可以找回。 社群保存： 为某个特定社区保存重要的软件资源。 在评估时，你可以考虑：
+你的目标更偏向哪一种？ 是软件历史？ 还是个人备份？ 这个软件是不是已经被保存到其他地方？ 可以先去查一查：Software Heritage 是否已经有这份代码。 GitHub Repository Evaluation Checklist（GitHub 仓库评估清单）： 软件是否相对完整、可用？ 是否还存在尚未解决的重大问题？ 是否依赖其他外部组件（例如外部服务、专有库）——这些东西只靠源代码无法覆盖？ 代码目前托管在哪些平台？ 从常见的开发平台到小众档案库，都要尽量列出。 归档时，能否尽量贴合原本的托管环境？ 例如镜像原始目录结构、保留原始仓库 URL 等。 能否抓取到版本控制系统中完整的开发历史？ 包括各种 VCS：Git、Mercurial、Subversion、Darcs、Bazaar、CVS 等。 对于一些更系统化的软件保存实践，你还可能会遇到专门的元数据表，例如一个 version_history.csv 可能包含：
+director name（项目负责人姓名） author name / email（作者姓名与邮箱） date original（最初发布日期） curator name / email（整理者姓名与邮箱） release tag（版本标签） commit message（提交说明） 可能涉及的任务包括：
+誊写手写的旧代码； 从不同硬件上找回散落的代码副本； 访谈开发者、维护者或使用者，补充背景信息。 这些步骤可以帮助你判断： 这个仓库值得投入多少保存工作，以及最适合把它送往哪一种保存路径。">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="zh">
+
+
+  <meta itemprop="name" content="First steps: Evaluating">
+  <meta itemprop="description" content="第一步：评估
+在真正开始归档之前，先问自己几个根本性的问题： 你为什么要保存这个仓库？它对谁重要？它在更大的软件生态里处于什么位置？
+你为什么要归档这个仓库？
+弄清动机有助于选择合适的保存策略：
+软件史保存： 为软件发展史贡献一份证据。 个人备份： 确保自己的作品安全、有地方可以找回。 社群保存： 为某个特定社区保存重要的软件资源。 在评估时，你可以考虑：
+你的目标更偏向哪一种？ 是软件历史？ 还是个人备份？ 这个软件是不是已经被保存到其他地方？ 可以先去查一查：Software Heritage 是否已经有这份代码。 GitHub Repository Evaluation Checklist（GitHub 仓库评估清单）： 软件是否相对完整、可用？ 是否还存在尚未解决的重大问题？ 是否依赖其他外部组件（例如外部服务、专有库）——这些东西只靠源代码无法覆盖？ 代码目前托管在哪些平台？ 从常见的开发平台到小众档案库，都要尽量列出。 归档时，能否尽量贴合原本的托管环境？ 例如镜像原始目录结构、保留原始仓库 URL 等。 能否抓取到版本控制系统中完整的开发历史？ 包括各种 VCS：Git、Mercurial、Subversion、Darcs、Bazaar、CVS 等。 对于一些更系统化的软件保存实践，你还可能会遇到专门的元数据表，例如一个 version_history.csv 可能包含：
+director name（项目负责人姓名） author name / email（作者姓名与邮箱） date original（最初发布日期） curator name / email（整理者姓名与邮箱） release tag（版本标签） commit message（提交说明） 可能涉及的任务包括：
+誊写手写的旧代码； 从不同硬件上找回散落的代码副本； 访谈开发者、维护者或使用者，补充背景信息。 这些步骤可以帮助你判断： 这个仓库值得投入多少保存工作，以及最适合把它送往哪一种保存路径。">
+  <meta itemprop="wordCount" content="62">
+
+<title>First steps: Evaluating | Netizen&#39;s Guide to Preserving Github Repositories</title>
+<link rel="icon" href="/repopres/favicon.png" >
+<link rel="manifest" href="/repopres/manifest.json">
+<link rel="canonical" href="http://localhost:1313/repopres/en/zh/docs/posts/first-step.md/">
+<link rel="stylesheet" href="/repopres/book.min.6970156cec683193d93c9c4edaf0d56574e4361df2e0c1be4f697ae81c3ba55f.css" integrity="sha256-aXAVbOxoMZPZPJxO2vDVZXTkNh3y4MG&#43;T2l66Bw7pV8=" crossorigin="anonymous">
+
+
+  <script defer src="/repopres/fuse.min.js"></script>
+  <script defer src="/repopres/en.search.min.d1bccfe8abf25cc425413f379ec27f285dd3aa01adffc518b9461ba38126cfda.js" integrity="sha256-0bzP6KvyXMQlQT83nsJ/KF3TqgGt/8UYuUYbo4Emz9o=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-zh">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/repopres/en/"><span>Netizen&#39;s Guide to Preserving Github Repositories</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+  
+    
+  
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex">
+      <a role="button">
+        <img src="/repopres/icons/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+      <img src="/repopres/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/repopres/zh/" class="flex flex-auto">
+          中文
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/repopres/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>First steps: Evaluating</h3>
+
+  <label for="toc-control">
+    
+  </label>
+</div>
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p><strong>第一步：评估</strong></p>
+<p>在真正开始归档之前，先问自己几个根本性的问题：
+你为什么要保存这个仓库？它对谁重要？它在更大的软件生态里处于什么位置？</p>
+<p><strong>你为什么要归档这个仓库？</strong></p>
+<p>弄清动机有助于选择合适的保存策略：</p>
+<ul>
+<li><strong>软件史保存</strong>：
+为软件发展史贡献一份证据。</li>
+<li><strong>个人备份</strong>：
+确保自己的作品安全、有地方可以找回。</li>
+<li><strong>社群保存</strong>：
+为某个特定社区保存重要的软件资源。</li>
+</ul>
+<p>在评估时，你可以考虑：</p>
+<ul>
+<li>你的目标更偏向哪一种？
+<ul>
+<li>是软件历史？</li>
+<li>还是个人备份？</li>
+</ul>
+</li>
+<li>这个软件是不是已经被保存到其他地方？
+<ul>
+<li>可以先去查一查：<strong>Software Heritage</strong> 是否已经有这份代码。</li>
+</ul>
+</li>
+<li>GitHub Repository Evaluation Checklist（GitHub 仓库评估清单）：
+<ul>
+<li>软件是否相对完整、可用？</li>
+<li>是否还存在尚未解决的重大问题？</li>
+<li>是否依赖其他外部组件（例如外部服务、专有库）——这些东西只靠源代码无法覆盖？</li>
+<li>代码目前托管在哪些平台？
+<ul>
+<li>从常见的开发平台到小众档案库，都要尽量列出。</li>
+</ul>
+</li>
+<li>归档时，能否尽量贴合原本的托管环境？
+<ul>
+<li>例如镜像原始目录结构、保留原始仓库 URL 等。</li>
+</ul>
+</li>
+<li>能否抓取到版本控制系统中完整的开发历史？
+<ul>
+<li>包括各种 VCS：Git、Mercurial、Subversion、Darcs、Bazaar、CVS 等。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>对于一些更系统化的软件保存实践，你还可能会遇到专门的元数据表，例如一个 <code>version_history.csv</code> 可能包含：</p>
+<ul>
+<li>director name（项目负责人姓名）</li>
+<li>author name / email（作者姓名与邮箱）</li>
+<li>date original（最初发布日期）</li>
+<li>curator name / email（整理者姓名与邮箱）</li>
+<li>release tag（版本标签）</li>
+<li>commit message（提交说明）</li>
+</ul>
+<p><strong>可能涉及的任务包括：</strong></p>
+<ul>
+<li>誊写手写的旧代码；</li>
+<li>从不同硬件上找回散落的代码副本；</li>
+<li>访谈开发者、维护者或使用者，补充背景信息。</li>
+</ul>
+<p>这些步骤可以帮助你判断：
+这个仓库值得投入多少保存工作，以及最适合把它送往哪一种保存路径。</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

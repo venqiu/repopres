@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Netizen&#39;s Guide to Preserving Github Repositories</title>
+    <link>http://localhost:1313/repopres/en/</link>
+    <description>Recent content on Netizen&#39;s Guide to Preserving Github Repositories</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/repopres/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction</title>
+      <link>http://localhost:1313/repopres/en/docs/posts/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/repopres/en/docs/posts/introduction/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Introduction:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;This is a decision guide for preserving a github repository. There are many approaches to doing this, with varying degrees of effort, difficulty, longevity, and dependability. The following guide outlines three main methods for preserving source code found on &lt;a href=&#34;http://github.com&#34;&gt;github.com&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Why is it important to preserve source code?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Software has become an integral part of modern society, embodying significant portions of our cultural knowledge. However, as Di Cosmo and Zacchiroli eloquently state, unlike other forms of digital preservation, source code has not yet achieved the status of “first class citizen in the digital archive landscape.”&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>First steps: Evaluating</title>
+      <link>http://localhost:1313/repopres/en/docs/posts/first-step/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/repopres/en/docs/posts/first-step/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;First steps: Evaluating&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Before beginning the archival process, ask yourself fundamental questions about your goals and the repository’s significance.&lt;/p&gt;&#xA;&lt;p&gt;Why Are You Archiving This Repository?&lt;/p&gt;&#xA;&lt;p&gt;Understanding your motivation helps determine the appropriate preservation approach:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Software history preservation: Contributing to the history of software development&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Personal backup: Ensuring your own work is safely stored&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Community preservation: Protecting software important to a specific community&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Emergency rescue: Saving at-risk code before it disappears&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Decision Guide</title>
+      <link>http://localhost:1313/repopres/en/docs/posts/decision-guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/repopres/en/docs/posts/decision-guide/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Decision Guide: Preservation Resources and Destinations:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Depending on who you are and the skills you have, you may decide to preserve source code locally, through an organization like Software Heritage, or through your institution’s digital preservation system. There are pros and cons to each of these options:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Local route&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Pros:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;You only need to rely on yourself&lt;/li&gt;&#xA;&lt;li&gt;You can make your own preservation decisions decide your own best practices (e.g. the types of metadata, ancillary materials, and other information to provide about each repo)&lt;/li&gt;&#xA;&lt;li&gt;Privacy: you have full control over the access of this software&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Cons:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;You are not bound to terms and services of any organization, or online platform, or copyright law&lt;/li&gt;&#xA;&lt;li&gt;You have to pay for your own storage space&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Software Heritage&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Local Solution</title>
+      <link>http://localhost:1313/repopres/en/docs/posts/local-solution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/repopres/en/docs/posts/local-solution/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Local Solution:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Link to that MackinationsAI or make our own that has powershell commands and bash commands&lt;/li&gt;&#xA;&lt;li&gt;NDSA Standards (link to &lt;a href=&#34;https://ndsa.org/publications/levels-of-digital-preservation/&#34;&gt;NDSA levels of digital preservation table)&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Tasks for Level 1&lt;/li&gt;&#xA;&lt;li&gt;Tasks for Level 2&lt;/li&gt;&#xA;&lt;li&gt;Tasks for Level 3&lt;/li&gt;&#xA;&lt;li&gt;Tasks for Level 4&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/repopres/img/local-solution.png&#34; alt=&#34;Local Solution&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Software Heritage</title>
+      <link>http://localhost:1313/repopres/en/docs/posts/software-heritage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/repopres/en/docs/posts/software-heritage/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Software Heritage:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;About Software Heritage&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Software Heritage was founded in 2016, launched by Inria in partnership with UNESCO. Their mission is to “collect, preserve, and make readily accessible all the software source code ever written” (&lt;a href=&#34;https://hal.science/hal-03375572&#34;&gt;Source&lt;/a&gt;).Check if your repository is already by visiting their online archive at &lt;a href=&#34;https://archive.softwareheritage.org/&#34;&gt;https://archive.softwareheritage.org/&lt;/a&gt;. If not, then issue an origin save request &lt;a href=&#34;https://archive.softwareheritage.org/save/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;The Software Heritage Acquisition Process&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;In their 2021 research paper, they outlined what they call the “Software Heritage Acquisition Process” (SWHAP). This process was developed to preserve source code from various sources, including but not limited to software development platforms like Github and Gitlab, legacy platforms like Google Code and Gitorious, package manager repositories like CPAn and npm, and FOSS (free and open source software) distributions such as Fedora and FreeBSD. The following contains a general overview of SWHAP so you can evaluate if Software Heritage is the right place for the code you’d like to preserve. You can find more information from their published research articles&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Institution</title>
+      <link>http://localhost:1313/repopres/en/docs/posts/institution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/repopres/en/docs/posts/institution/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Institution&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Summarize Jonathan’s strategies, and other interviewees&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>P2P Software-Sharing Communities</title>
+      <link>http://localhost:1313/repopres/en/docs/posts/p2p-software-sharing-communities/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/repopres/en/docs/posts/p2p-software-sharing-communities/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;P2P Software-Sharing Communities&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;If you believe the software you are attempting to preserve may not be welcome in on SWH, and you hope for more distribution and shared responsibility for preserving it beyond your own hard drive(s), then seeding it in P2P file-sharing communities may be the answer&lt;/li&gt;&#xA;&lt;li&gt;This is out of scope for this toolkit but if you are interested in joining then keep your eyes peeled on the subreddits and discords of communities such as [this] or [that] for opportunities to be invited into the community&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>How to get more involved</title>
+      <link>http://localhost:1313/repopres/en/docs/posts/how-to-get-more-involved/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/repopres/en/docs/posts/how-to-get-more-involved/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;How to get more involved?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Citing SWH article: In the software preservation&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/repopres/en/docs/about/repopres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/repopres/en/docs/about/repopres/</guid>
+      <description>&lt;h1 id=&#34;repopres&#34;&gt;repopres&lt;a class=&#34;anchor&#34; href=&#34;#repopres&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Netizen&amp;rsquo;s Guide to Preserving Github Repositories&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/repopres/en/docs/contributions/contributions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/repopres/en/docs/contributions/contributions/</guid>
+      <description>&lt;h1 id=&#34;contributions&#34;&gt;Contributions&lt;a class=&#34;anchor&#34; href=&#34;#contributions&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;interviewer&#34;&gt;Interviewer&lt;a class=&#34;anchor&#34; href=&#34;#interviewer&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Jonathan M Farbowitz&lt;/li&gt;&#xA;&lt;li&gt;Emma Dickson&lt;/li&gt;&#xA;&lt;li&gt;Mark Hellar&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;redactor&#34;&gt;redactor&lt;a class=&#34;anchor&#34; href=&#34;#redactor&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Ven&lt;/li&gt;&#xA;&lt;li&gt;Koel&lt;/li&gt;&#xA;&lt;li&gt;Haoran&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

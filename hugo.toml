@@ -3,10 +3,22 @@ languageCode = 'en-us'
 title = 'Netizen of Guide to Preserving Github Repositories'
 theme = "hugo-book"
 
-enableGitInfo = true
-disableKinds = ['taxonomy', 'taxonomyTerm']
+defaultContentLanguage         = "en"
+defaultContentLanguageInSubdir = true
 
 [params]
-  BookTheme = 'auto'      
-  BookToC = true         
-  BookSection = 'docs'   
+  BookSection = "docs" 
+  BookTheme   = "auto"
+  BookSearch  = true
+
+[languages]
+
+  [languages.en]
+    languageName = "English"
+    weight       = 1
+    contentDir   = "content/en"
+
+  [languages.zh]
+    languageName = "中文"
+    weight       = 2
+    contentDir   = "content/zh"

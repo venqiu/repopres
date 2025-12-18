@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/repopres/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=repopres/livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="介绍：
+本指南是一个用于保存 GitHub 仓库的决策向导，重点关注如何评估、准备并保存托管在 github.com 上的源代码。
+为什么要保存源代码？
+软件已经成为现代社会基础设施的一部分，它不仅是工具，也承载着文化、科学研究和社会实践等丰富信息。 如果今天的源代码无法被保存下来，未来的研究者将很难理解我们这一代的技术与社会运作方式。 因此，越来越多的档案机构开始把软件视为数字档案体系中的 “first-class citizen（第一等公民）”。
+软件为什么处在风险之中
+内在的易失性 软件依赖特定的执行环境，例如操作系统版本、依赖库、硬件架构和编译器。一旦这些环境不再被支持，软件就难以运行或重现。不同的版本控制系统（Git、Subversion 等）也各有自己的数据模型，目前并没有统一的长期保存格式。 项目被放弃 很多 GitHub 仓库是个人或小团队维护的，一旦维护者离开、兴趣转移或组织解散，代码就可能无人管理，随时面临被删除或 “消失” 的风险。 DMCA 与版权 GitHub 会根据 DMCA 通知下架仓库；版权纠纷或授权不清，也可能导致代码被迫移除。 审查与下架 在某些情况下，出于政策、公司策略或法律原因，仓库可能被平台隐藏或彻底删除。 一个 GitHub 仓库都包含什么
+一个仓库并不仅仅是源代码，它由多种组件构成：
+主要内容——“快照”部分 Source code（源代码） Commit history（提交历史） Branches（分支） Tags（标签） README 文件 License（许可证） 次要/周边内容——更接近“情境化保存” Issues：问题跟踪和讨论 Pull requests：合并请求和代码审查记录 Releases：正式发布版本及其附带文件 Actions workflows：GitHub Actions 自动化工作流 Projects / Wiki 等项目文档 Discussions：社区讨论区，用于更开放的协作交流 这些组成部分中，有些更适合被完整采集（例如源代码与提交历史），有些则只能以截图、导出或说明性文档的方式被“间接”保存。
+元数据与相关资料的问题
+元数据和相关资料（文档、截图、研究论文、用户手册等）对软件保存非常关键。 它们不仅帮助理解这份代码“做什么”，还说明了它在什么情境下被使用、谁参与了开发、有哪些依赖关系。这些差异会显著影响你选择哪一种保存路径与工具。
+总结：软件为什么难以归档？我们现在处在什么状态？
+软件面临的风险：内在易失性、项目被放弃、DMCA/版权、审查 关键问题包括： 为什么归档源代码这么困难？ 当前的软件保存生态是什么状况？ “最夸张”的例子：GitHub Arctic Code Vault（北极冷库） “最开放、覆盖面最广”的例子：Software Heritage 一个 GitHub 仓库的哪些组成部分值得保存？ 主要内容：源代码、提交历史、分支、标签、README、许可证等 次要内容：issue、pull request、release、actions workflow、discussions 等 ">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/repopres/en/zh/docs/posts/introduction/">
+  <meta property="og:site_name" content="Netizen&#39;s Guide to Preserving Github Repositories">
+  <meta property="og:title" content="Introduction">
+  <meta property="og:description" content="介绍：
+本指南是一个用于保存 GitHub 仓库的决策向导，重点关注如何评估、准备并保存托管在 github.com 上的源代码。
+为什么要保存源代码？
+软件已经成为现代社会基础设施的一部分，它不仅是工具，也承载着文化、科学研究和社会实践等丰富信息。 如果今天的源代码无法被保存下来，未来的研究者将很难理解我们这一代的技术与社会运作方式。 因此，越来越多的档案机构开始把软件视为数字档案体系中的 “first-class citizen（第一等公民）”。
+软件为什么处在风险之中
+内在的易失性 软件依赖特定的执行环境，例如操作系统版本、依赖库、硬件架构和编译器。一旦这些环境不再被支持，软件就难以运行或重现。不同的版本控制系统（Git、Subversion 等）也各有自己的数据模型，目前并没有统一的长期保存格式。 项目被放弃 很多 GitHub 仓库是个人或小团队维护的，一旦维护者离开、兴趣转移或组织解散，代码就可能无人管理，随时面临被删除或 “消失” 的风险。 DMCA 与版权 GitHub 会根据 DMCA 通知下架仓库；版权纠纷或授权不清，也可能导致代码被迫移除。 审查与下架 在某些情况下，出于政策、公司策略或法律原因，仓库可能被平台隐藏或彻底删除。 一个 GitHub 仓库都包含什么
+一个仓库并不仅仅是源代码，它由多种组件构成：
+主要内容——“快照”部分 Source code（源代码） Commit history（提交历史） Branches（分支） Tags（标签） README 文件 License（许可证） 次要/周边内容——更接近“情境化保存” Issues：问题跟踪和讨论 Pull requests：合并请求和代码审查记录 Releases：正式发布版本及其附带文件 Actions workflows：GitHub Actions 自动化工作流 Projects / Wiki 等项目文档 Discussions：社区讨论区，用于更开放的协作交流 这些组成部分中，有些更适合被完整采集（例如源代码与提交历史），有些则只能以截图、导出或说明性文档的方式被“间接”保存。
+元数据与相关资料的问题
+元数据和相关资料（文档、截图、研究论文、用户手册等）对软件保存非常关键。 它们不仅帮助理解这份代码“做什么”，还说明了它在什么情境下被使用、谁参与了开发、有哪些依赖关系。这些差异会显著影响你选择哪一种保存路径与工具。
+总结：软件为什么难以归档？我们现在处在什么状态？
+软件面临的风险：内在易失性、项目被放弃、DMCA/版权、审查 关键问题包括： 为什么归档源代码这么困难？ 当前的软件保存生态是什么状况？ “最夸张”的例子：GitHub Arctic Code Vault（北极冷库） “最开放、覆盖面最广”的例子：Software Heritage 一个 GitHub 仓库的哪些组成部分值得保存？ 主要内容：源代码、提交历史、分支、标签、README、许可证等 次要内容：issue、pull request、release、actions workflow、discussions 等">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="zh">
+
+
+  <meta itemprop="name" content="Introduction">
+  <meta itemprop="description" content="介绍：
+本指南是一个用于保存 GitHub 仓库的决策向导，重点关注如何评估、准备并保存托管在 github.com 上的源代码。
+为什么要保存源代码？
+软件已经成为现代社会基础设施的一部分，它不仅是工具，也承载着文化、科学研究和社会实践等丰富信息。 如果今天的源代码无法被保存下来，未来的研究者将很难理解我们这一代的技术与社会运作方式。 因此，越来越多的档案机构开始把软件视为数字档案体系中的 “first-class citizen（第一等公民）”。
+软件为什么处在风险之中
+内在的易失性 软件依赖特定的执行环境，例如操作系统版本、依赖库、硬件架构和编译器。一旦这些环境不再被支持，软件就难以运行或重现。不同的版本控制系统（Git、Subversion 等）也各有自己的数据模型，目前并没有统一的长期保存格式。 项目被放弃 很多 GitHub 仓库是个人或小团队维护的，一旦维护者离开、兴趣转移或组织解散，代码就可能无人管理，随时面临被删除或 “消失” 的风险。 DMCA 与版权 GitHub 会根据 DMCA 通知下架仓库；版权纠纷或授权不清，也可能导致代码被迫移除。 审查与下架 在某些情况下，出于政策、公司策略或法律原因，仓库可能被平台隐藏或彻底删除。 一个 GitHub 仓库都包含什么
+一个仓库并不仅仅是源代码，它由多种组件构成：
+主要内容——“快照”部分 Source code（源代码） Commit history（提交历史） Branches（分支） Tags（标签） README 文件 License（许可证） 次要/周边内容——更接近“情境化保存” Issues：问题跟踪和讨论 Pull requests：合并请求和代码审查记录 Releases：正式发布版本及其附带文件 Actions workflows：GitHub Actions 自动化工作流 Projects / Wiki 等项目文档 Discussions：社区讨论区，用于更开放的协作交流 这些组成部分中，有些更适合被完整采集（例如源代码与提交历史），有些则只能以截图、导出或说明性文档的方式被“间接”保存。
+元数据与相关资料的问题
+元数据和相关资料（文档、截图、研究论文、用户手册等）对软件保存非常关键。 它们不仅帮助理解这份代码“做什么”，还说明了它在什么情境下被使用、谁参与了开发、有哪些依赖关系。这些差异会显著影响你选择哪一种保存路径与工具。
+总结：软件为什么难以归档？我们现在处在什么状态？
+软件面临的风险：内在易失性、项目被放弃、DMCA/版权、审查 关键问题包括： 为什么归档源代码这么困难？ 当前的软件保存生态是什么状况？ “最夸张”的例子：GitHub Arctic Code Vault（北极冷库） “最开放、覆盖面最广”的例子：Software Heritage 一个 GitHub 仓库的哪些组成部分值得保存？ 主要内容：源代码、提交历史、分支、标签、README、许可证等 次要内容：issue、pull request、release、actions workflow、discussions 等">
+  <meta itemprop="wordCount" content="81">
+
+<title>Introduction | Netizen&#39;s Guide to Preserving Github Repositories</title>
+<link rel="icon" href="/repopres/favicon.png" >
+<link rel="manifest" href="/repopres/manifest.json">
+<link rel="canonical" href="http://localhost:1313/repopres/en/zh/docs/posts/introduction/">
+<link rel="stylesheet" href="/repopres/book.min.6970156cec683193d93c9c4edaf0d56574e4361df2e0c1be4f697ae81c3ba55f.css" integrity="sha256-aXAVbOxoMZPZPJxO2vDVZXTkNh3y4MG&#43;T2l66Bw7pV8=" crossorigin="anonymous">
+
+
+  <script defer src="/repopres/fuse.min.js"></script>
+  <script defer src="/repopres/en.search.min.601b1828160b81b26ea7cf3fda5cd869003111e056135452d96ab77732ecb7d9.js" integrity="sha256-YBsYKBYLgbJup88/2lzYaQAxEeBWE1RS2Wq3dzLst9k=" crossorigin="anonymous"></script>
+
+
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-zh">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/repopres/en/"><span>Netizen&#39;s Guide to Preserving Github Repositories</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+  
+    
+  
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex">
+      <a role="button">
+        <img src="/repopres/icons/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+      <img src="/repopres/icons/chevron-right.svg" class="book-icon" alt="Expand" />
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/repopres/zh/" class="flex flex-auto">
+          中文
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      About</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/about/repopres/" class="">
+      Repopres</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Posts</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/introduction/" class="">
+      Introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/first-step/" class="">
+      First steps: Evaluating</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/decision-guide/" class="">
+      Decision Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/local-solution/" class="">
+      Local Solution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/software-heritage/" class="">
+      Software Heritage</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/institution/" class="">
+      Institution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/p2p-software-sharing-communities/" class="">
+      P2P Software-Sharing Communities</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/posts/how-to-get-more-involved/" class="">
+      How to get more involved</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Contributions</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/repopres/en/en/docs/contributions/contributions/" class="">
+      Contributions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/repopres/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Introduction</h3>
+
+  <label for="toc-control">
+    
+  </label>
+</div>
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p><strong>介绍：</strong></p>
+<p>本指南是一个用于<strong>保存 GitHub 仓库</strong>的决策向导，重点关注如何评估、准备并保存托管在 <a href="http://github.com">github.com</a> 上的源代码。</p>
+<p><strong>为什么要保存源代码？</strong></p>
+<p>软件已经成为现代社会基础设施的一部分，它不仅是工具，也承载着文化、科学研究和社会实践等丰富信息。
+如果今天的源代码无法被保存下来，未来的研究者将很难理解我们这一代的技术与社会运作方式。
+因此，越来越多的档案机构开始把软件视为数字档案体系中的 “first-class citizen（第一等公民）”。</p>
+<p><strong>软件为什么处在风险之中</strong></p>
+<ul>
+<li><strong>内在的易失性</strong>
+软件依赖特定的执行环境，例如操作系统版本、依赖库、硬件架构和编译器。一旦这些环境不再被支持，软件就难以运行或重现。不同的版本控制系统（Git、Subversion 等）也各有自己的数据模型，目前并没有统一的长期保存格式。</li>
+<li><strong>项目被放弃</strong>
+很多 GitHub 仓库是个人或小团队维护的，一旦维护者离开、兴趣转移或组织解散，代码就可能无人管理，随时面临被删除或 “消失” 的风险。</li>
+<li><strong>DMCA 与版权</strong>
+GitHub 会根据 DMCA 通知下架仓库；版权纠纷或授权不清，也可能导致代码被迫移除。</li>
+<li><strong>审查与下架</strong>
+在某些情况下，出于政策、公司策略或法律原因，仓库可能被平台隐藏或彻底删除。</li>
+</ul>
+<hr>
+<p><strong>一个 GitHub 仓库都包含什么</strong></p>
+<p>一个仓库并不仅仅是源代码，它由多种组件构成：</p>
+<ul>
+<li><strong>主要内容——“快照”部分</strong>
+<ul>
+<li>Source code（源代码）</li>
+<li>Commit history（提交历史）</li>
+<li>Branches（分支）</li>
+<li>Tags（标签）</li>
+<li><code>README</code> 文件</li>
+<li>License（许可证）</li>
+</ul>
+</li>
+<li><strong>次要/周边内容——更接近“情境化保存”</strong>
+<ul>
+<li>Issues：问题跟踪和讨论</li>
+<li>Pull requests：合并请求和代码审查记录</li>
+<li>Releases：正式发布版本及其附带文件</li>
+<li>Actions workflows：GitHub Actions 自动化工作流</li>
+<li>Projects / Wiki 等项目文档</li>
+<li><a href="https://docs.github.com/en/discussions">Discussions</a>：社区讨论区，用于更开放的协作交流</li>
+</ul>
+</li>
+</ul>
+<p>这些组成部分中，有些更适合被完整采集（例如源代码与提交历史），有些则只能以截图、导出或说明性文档的方式被“间接”保存。</p>
+<hr>
+<p><strong>元数据与相关资料的问题</strong></p>
+<p>元数据和相关资料（文档、截图、研究论文、用户手册等）对软件保存非常关键。
+它们不仅帮助理解这份代码“做什么”，还说明了它在什么情境下被使用、谁参与了开发、有哪些依赖关系。这些差异会显著影响你选择哪一种保存路径与工具。</p>
+<hr>
+<p><strong>总结：软件为什么难以归档？我们现在处在什么状态？</strong></p>
+<ul>
+<li>软件面临的风险：内在易失性、项目被放弃、DMCA/版权、审查</li>
+<li>关键问题包括：
+<ul>
+<li>为什么归档源代码这么困难？</li>
+<li>当前的软件保存生态是什么状况？
+<ul>
+<li>“最夸张”的例子：GitHub Arctic Code Vault（北极冷库）</li>
+<li>“最开放、覆盖面最广”的例子：Software Heritage</li>
+</ul>
+</li>
+<li>一个 GitHub 仓库的哪些组成部分值得保存？
+<ul>
+<li>主要内容：源代码、提交历史、分支、标签、README、许可证等</li>
+<li>次要内容：issue、pull request、release、actions workflow、discussions 等</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+  
+ 
+        
+  
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
