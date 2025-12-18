@@ -1,8 +1,11 @@
 ---
-title: "Institution"
+title: "Introduction"
 weight: 1
-
 ---
+
+{{< hint info >}}
+This guide explains different ways to preserve a GitHub repository…
+{{< /hint >}}
 
 ## **Institution**
 
